@@ -1,7 +1,7 @@
 ---
 import { Switch } from '~/components'
 
-const comunicacion = [
+const comunication = [
   'HAY COMUNICACIÓN ENTRE EL RESPONSABLE Y EL ENCARGADO?',
   'AL CONTRATAR AL ENCARGADO, EL RESPONSABLE TIENE CONOCIMIENTO SI EL ENCARGADO POSEE MULTAS POR VIOLACIÓN DE DATOS PERSONALES?',
   'EL RESPONSABLE TIENE CONOCIMIENTOS SI EL ENCARGADO POSEE LICENCIAS O CERTIFICACIONES EN MATERIA DE TRATAMIENTO DE DATOS Y CIBERSEGURIDAD?',
@@ -12,7 +12,7 @@ const comunicacion = [
 ]
 ---
 <head>
-  <script src='/src/scripts/bases.js ' defer></script>
+  <script type="module" src='/src/scripts/bases.js ' defer is:inline></script>
 </head>
 
 <section
@@ -30,7 +30,7 @@ const comunicacion = [
   </h2>
   <form id="datosComunicacion" action='/submit' method='post'>
     {
-      comunicacion.map((pregunta, index) => (
+      comunication.map((pregunta, index) => (
         <Switch id={`switch-${index}`} label={pregunta} />
       ))
     }

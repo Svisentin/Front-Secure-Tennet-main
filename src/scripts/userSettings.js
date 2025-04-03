@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			console.log("Enviando solicitud al backend...");
 
 			try {
-				const response = await fetch("http://localhost:5000/auth/passwordSettings", {
+				const response = await fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/auth/passwordSettings`, {
 					method: "POST",
 					credentials: "include",
 					headers: {

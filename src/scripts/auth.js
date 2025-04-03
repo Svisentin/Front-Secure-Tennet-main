@@ -2,7 +2,7 @@ const publicRoutes = ["/", "/authentication/sign-in", "/authentication/sign-up"]
 
 async function checkAuth() {
 	try {
-		const response = await fetch("http://localhost:5000/auth/check-auth", {
+		const response = await fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/auth/check-auth`, {
 			credentials: "include",
 		});
 

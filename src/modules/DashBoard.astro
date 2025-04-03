@@ -3,12 +3,12 @@
 ---
 <head>
     <!-- Usamos defer para asegurarnos de que los scripts se carguen en el orden correcto -->
-    <script src="/src/lib/jspdf.umd.min.js" defer></script>
-    <script src="/src/lib/jspdf.plugin.autotable.min.js" defer></script>
+    <script src="/src/lib/jspdf.umd.min.js" defer is:inline></script>
+    <script src="/src/lib/jspdf.plugin.autotable.min.js" defer is:inline></script>
 
     <!-- Otros scripts -->
-    <script src='/src/scripts/dashboard.js' defer></script>
-    <script src='/src/scripts/export.js' defer></script>
+    <script type="module" src='/src/scripts/dashboard.js' defer is:inline></script>
+    <script type="module" src='/src/scripts/export.js' defer is:inline></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 	
 </head>

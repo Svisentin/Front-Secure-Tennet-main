@@ -1,6 +1,5 @@
+<!--  switch.Astro -->
 ---
-// Switch.astro
-
 export interface Props {
   id: string
   label: string
@@ -21,76 +20,61 @@ const { id, label } = Astro.props
       name={id}
       class='relative z-10 w-full'
       value='0'
-         
     />
     <div
       class='absolute left-0 top-1/2 z-0 flex h-2.5 w-full -translate-y-1/2 transform items-center justify-between rounded border border-gray-400'
     >
-      <div
-        class='relative h-full w-1/5 rounded-l bg-gray-500'
-        id={`${id}-color-0`}
-      >
-        <span
-          class='text-tiny absolute bottom-[-20px] left-1/2 -translate-x-1/2 transform text-gray-700 dark:text-gray-400'
-          >nulo</span
-        >
+      <div class='relative h-full w-1/5 rounded-l bg-gray-500' id={`${id}-color-0`}>
+        <span class='text-tiny absolute bottom-[-20px] left-1/2 -translate-x-1/2 transform text-gray-700 dark:text-gray-400'>nulo</span>
       </div>
       <div class='relative h-full w-1/5 bg-green-400' id={`${id}-color-1`}>
-        <span
-          class='text-tiny absolute bottom-[-20px] left-1/2 -translate-x-1/2 transform text-gray-700 dark:text-gray-400'
-          >bajo</span
-        >
+        <span class='text-tiny absolute bottom-[-20px] left-1/2 -translate-x-1/2 transform text-gray-700 dark:text-gray-400'>bajo</span>
       </div>
       <div class='relative h-full w-1/5 bg-white' id={`${id}-color-2`}>
-        <span
-          class='text-tiny absolute bottom-[-20px] left-1/2 -translate-x-1/2 transform text-gray-700 dark:text-gray-400'
-          >medio</span
-        >
+        <span class='text-tiny absolute bottom-[-20px] left-1/2 -translate-x-1/2 transform text-gray-700 dark:text-gray-400'>medio</span>
       </div>
       <div class='relative h-full w-1/5 bg-yellow-300' id={`${id}-color-3`}>
-        <span
-          class='text-tiny absolute bottom-[-20px] left-1/2 -translate-x-1/2 transform text-gray-700 dark:text-gray-400'
-          >alto</span
-        >
+        <span class='text-tiny absolute bottom-[-20px] left-1/2 -translate-x-1/2 transform text-gray-700 dark:text-gray-400'>alto</span>
       </div>
-      <div        class='relative h-full w-1/5 rounded-r bg-red-500'        id={`${id}-color-4`}
-      >
-        <span
-          class='text-tiny absolute bottom-[-20px] left-1/2 -translate-x-1/2 transform text-gray-700 dark:text-gray-400'
-          >muy alto</span
-        >
+      <div class='relative h-full w-1/5 rounded-r bg-red-500' id={`${id}-color-4`}>
+        <span class='text-tiny absolute bottom-[-20px] left-1/2 -translate-x-1/2 transform text-gray-700 dark:text-gray-400'>muy alto</span>
       </div>
     </div>
   </div>
 </div>
 
-<script>
-  // Declarar la función updateSlider dentro del bloque script
-  function updateSlider(event) {
-  const id = event.target.id;  // Obtén el ID del input
-  const value = event.target.value;  // Obtén el valor del slider
+<script defer is:inline>
+function updateSlider(event) {
+  const target = event.target;
+  if (!target) return;
 
-  // Actualizar la opacidad de los colores según el valor del slider
+  const id = target.id;
+  const value = target.value;
+
   for (let i = 0; i <= 4; i++) {
-    document.getElementById(`${id}-color-${i}`).style.opacity =
-      i == value ? '1' : '0.3';
+    const element = document.getElementById(`${id}-color-${i}`);
+    if (element) {
+      element.style.opacity = i == Number(value) ? '1' : '0.3';
+    }
   }
 
-  console.log("cambio el switch", id, "valor:", value); // Mostrar en consola el ID y valor del slider
+  console.log("Cambio en switch:", id, "Valor:", value);
 }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const sliders = document.querySelectorAll('input[type="range"]'); // Seleccionamos todos los sliders
+document.addEventListener('DOMContentLoaded', () => {
+  const sliders = document.querySelectorAll('input[type="range"]');
 
-    sliders.forEach(slider => {
-      slider.addEventListener('input', updateSlider); // Usamos addEventListener en lugar de oninput
-    });
+  if (sliders.length === 0) {
+    console.warn("No se encontraron sliders en el documento.");
+    return;
+  }
+
+  sliders.forEach(slider => {
+    slider.removeEventListener('input', updateSlider); // Evita agregar múltiples veces
+    slider.addEventListener('input', updateSlider);
   });
-
-
+});
 </script>
-
-
 
 <style>
   input[type='range']::-webkit-slider-thumb {

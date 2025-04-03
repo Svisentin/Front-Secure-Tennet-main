@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			console.log("Enviando solicitud al backend...");
 
 			try {
-				const response = await fetch("http://localhost:5000/auth/audIntIdentificatorios", {
+				const response = await fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/auth/audIntIdentificatorios`, {
 					method: "POST",
 					credentials: "include",
 					headers: {
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			console.log("Enviando solicitud al backend...");
 
 			try {
-				const response = await fetch("http://localhost:5000/auth/audIntMonitoreo", {
+				const response = await fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/auth/audIntMonitoreo`, {
 					method: "POST",
 					credentials: "include",
 					headers: {
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			console.log("Enviando solicitud al backend...");
 
 			try {
-				const response = await fetch("http://localhost:5000/auth/audIntSituacion", {
+				const response = await fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/auth/audIntSituacion`, {
 					method: "POST",
 					credentials: "include",
 					headers: {
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			console.log("Enviando solicitud al backend...");
 
 			try {
-				const response = await fetch("http://localhost:5000/auth/audIntLocalizacionyBiometricos", {
+				const response = await fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/auth/audIntLocalizacionyBiometricos`, {
 					method: "POST",
 					credentials: "include",
 					headers: {
@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			console.log("Enviando solicitud al backend...");
 
 			try {
-				const response = await fetch("http://localhost:5000/auth/audIntEspeciales", {
+				const response = await fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/auth/audIntEspeciales`, {
 					method: "POST",
 					credentials: "include",
 					headers: {
@@ -308,7 +308,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			console.log("Enviando solicitud al backend...");
 
 			try {
-				const response = await fetch("http://localhost:5000/auth/audIntIdentificadores", {
+				const response = await fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/auth/audIntIdentificadores`, {
 					method: "POST",
 					credentials: "include",
 					headers: {
@@ -364,7 +364,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			console.log("Enviando solicitud al backend...");
 
 			try {
-				const response = await fetch("http://localhost:5000/auth/audIntLegalContrato", {
+				const response = await fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/auth/audIntLegalContrato`, {
 					method: "POST",
 					credentials: "include",
 					headers: {

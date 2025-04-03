@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			console.log("Enviando solicitud al backend...");
 
 			try {
-				const response = await fetch("http://localhost:5000/auth/ambitoTerritorial", {
+				const response = await fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/auth/ambitoTerritorial`, {
 					method: "POST",
 					credentials: "include",
 					headers: {
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			console.log("Enviando solicitud al backend...");
 
 			try {
-				const response = await fetch("http://localhost:5000/auth/comunicacion", {
+				const response = await fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/auth/comunicacion`, {
 					method: "POST",
 					credentials: "include",
 					headers: {
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			console.log("Enviando solicitud al backend...");
 
 			try {
-				const response = await fetch("http://localhost:5000/auth/datosEmpresa", {
+				const response = await fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/auth/datosEmpresa`, {
 					method: "POST",
 					credentials: "include",
 					headers: {
@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			console.log("Enviando solicitud al backend...");
 
 			try {
-				const response = await fetch("http://localhost:5000/auth/datosExtensionFinalidad", {
+				const response = await fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/auth/datosExtensionFinalidad`, {
 					method: "POST",
 					credentials: "include",
 					headers: {
@@ -263,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // 			console.log("Enviando solicitud al backend...");
 
 // 			try {
-// 				const response = await fetch("http://localhost:5000/auth/datosFinalidad", {
+// 				const response = await fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/auth/datosFinalidad`, {
 // 					method: "POST",
 // 					credentials: "include",
 // 					headers: {

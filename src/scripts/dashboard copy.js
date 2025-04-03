@@ -1,7 +1,7 @@
 // document.addEventListener("DOMContentLoaded", async function () {
 // 	async function fetchChartData() {
 // 		try {
-// 			const response = await fetch("http://localhost:5000/auth/chartData", {
+// 			const response = await fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/auth/chartData`, {
 // 				method: "POST",
 // 				credentials: "include",
 // 				headers: {
@@ -192,7 +192,7 @@ let nombreEmpresa = "";
 document.addEventListener("DOMContentLoaded", async function () {
 	async function fetchChartData() {
 		try {
-			const response = await fetch("http://localhost:5000/auth/chartData", {
+			const response = await fetch(`${import.meta.env.PUBLIC_BACKEND_URL}/auth/chartData`, {
 				method: "POST",
 				credentials: "include",
 				headers: {
